@@ -1,0 +1,22 @@
+.content {
+    display: table;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+
+.content-row {
+    display: table-row;
+
+}
+
+.content-cell {
+    display: table-cell;
+    border: 2px solid rgb(68, 68, 68);
+    width: 30px;
+    height: 30px;
+}
+
+.bomb-cell {
+    background-color: red;
+}
