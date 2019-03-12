@@ -6,8 +6,8 @@ let createElem = function(elemType, elemClass) {
     elem.classList.add(elemClass);
     return elem;
 }
-let fieldRows = 6, fieldCells = 12;
-var field = new sapperField(fieldRows,fieldCells,2);
+let fieldRows = 12, fieldCells = 12;
+var field = new sapperField(fieldRows,fieldCells,"recruit");
 
 console.log(field.getFieldMatx());
 // alert(field.getFieldMatx());
@@ -19,7 +19,7 @@ for(let i=0; i< fieldRows; i++){
     let tRow = createElem('div', 'content-row');
     for(let j=0; j< fieldCells; j++){
         let tCell = createElem('div', 'content-cell');
-        if(bombMatx[i][j] == 0){
+        /*if(bombMatx[i][j] == 0){
             // tCell.classList.add('bomb-cell');
             tCell.onclick = function() {
                 // alert('you');
@@ -27,6 +27,10 @@ for(let i=0; i< fieldRows; i++){
             };
         } else {
 
+        }*/
+
+        if(bombMatx[i][j] == -2) {
+            tCell.classList.add('bomb-cell');
         }
         if(i == fieldRows-1 && j == fieldCells-1){
             tCell.onclick = function(){
