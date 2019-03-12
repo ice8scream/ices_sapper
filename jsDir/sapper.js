@@ -6,19 +6,26 @@ let createElem = function(elemType, elemClass) {
     elem.classList.add(elemClass);
     return elem;
 }
-let fieldRows = 12, fieldCells = 12;
-var field = new sapperField(fieldRows,fieldCells,"recruit");
+let fieldRows = 12, fieldCells = 12, fieldDifficult = "recruit";
+var field = new sapperField(fieldRows,fieldCells,fieldDifficult);
+
+
 
 console.log(field.getFieldMatx());
 // alert(field.getFieldMatx());
 let bombMatx = field.getFieldMatx();
 
 let sapper = createElem('section', 'content');
-
+let sapperDiscr = createElem('div', 'content-caption');
+sapperDiscr.textContent = "Bombs quantity: " + field.GetBombsCounter();
+sapper.appendChild(sapperDiscr);
 for(let i=0; i< fieldRows; i++){
     let tRow = createElem('div', 'content-row');
     for(let j=0; j< fieldCells; j++){
         let tCell = createElem('div', 'content-cell');
+        tCell.onclick = function() {
+             field.LeftClickDetected(sapper,i,j);
+        };
         /*if(bombMatx[i][j] == 0){
             // tCell.classList.add('bomb-cell');
             tCell.onclick = function() {
@@ -29,8 +36,11 @@ for(let i=0; i< fieldRows; i++){
 
         }*/
 
-        if(bombMatx[i][j] == -2) {
+        /*if(bombMatx[i][j] == -2) {
             tCell.classList.add('bomb-cell');
+        }else if(bombMatx[i][j] > 0){
+            tCell.classList.add('bomb-near');
+            tCell.textContent = bombMatx[i][j];
         }
         if(i == fieldRows-1 && j == fieldCells-1){
             tCell.onclick = function(){
@@ -42,7 +52,7 @@ for(let i=0; i< fieldRows; i++){
                 };
                 document.body.appendChild(button);
             };
-        }
+        }*/
         tRow.appendChild(tCell);
     }    
     sapper.appendChild(tRow);
