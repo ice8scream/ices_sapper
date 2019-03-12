@@ -4,6 +4,18 @@
     margin: auto;
 }
 
+.content-caption {
+    display: table-caption;
+    background-color: gold;
+    color: rgb(0, 0, 112);
+    border: 2px solid rgb(68, 68, 68);
+    border-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    height: 30px;
+    font-size: 25px; 
+
+}
 
 .content-row {
     display: table-row;
@@ -18,5 +30,16 @@
 }
 
 .bomb-cell {
-    background-color: red;
+    background-color: crimson;
+}
+
+.bomb-near {
+    color: rgb(0, 0, 112);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 25px; 
+}
+
+.test {
+    background-color: green;
 }
