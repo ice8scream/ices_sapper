@@ -11,9 +11,9 @@ var field = new sapperField(fieldRows,fieldCells,fieldDifficult);
 
 
 
-console.log(field.getFieldMatx());
-// alert(field.getFieldMatx());
-let bombMatx = field.getFieldMatx();
+console.log(field.GetFieldMatx);
+// alert(field.FieldMatx());
+let bombMatx = field.GetFieldMatx;
 
 let sapper = createElem('section', 'content');
 let sapperDiscr = createElem('div', 'content-caption');

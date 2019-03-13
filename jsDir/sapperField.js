@@ -1,13 +1,5 @@
-class sapperField {
+class sapperField {  
     constructor(rows, cells, difficult) {
-        this.field = [];
-        this.bombCounter = 0;
-        this.diffInterp = {
-            recruit: 5,
-            veteran: 10,
-            expert: 20
-        };
-
         this.Reset(rows, cells);
         this.FillField(this.diffInterp[difficult]);
     }; 
@@ -123,7 +115,7 @@ class sapperField {
     };
 
     // return field (0 - safety, 1-8 - nearbomb, -2 - bomb, -3 - checked)
-    getFieldMatx(){
+    get GetFieldMatx(){
         return this.field;
     };
 
@@ -136,4 +128,13 @@ class sapperField {
         //TODO Win/loose game logic
         // TODO for RBM make counter sincronise, if allB == allF -> wingame
     
+
+    /*====================PROPERTIES=====================*/    
+    field = [];
+    bombCounter = 0;
+    diffInterp = {
+        recruit: 5,
+        veteran: 10,
+        expert: 20
+    };
 };
